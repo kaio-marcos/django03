@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script defer src="{% static 'js/scripts.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- chave imprime // nome gerado dinamicamente, pois esta na views -->
+    <h1>esse é o perfil do {{nome}}</h1>
+    {% if nome == "cachorros"%} <!-- '%%' serve para chamarmos o static e atribuir uma função em python-->
+        <p>essa pagina é do kaio</p>
+    {% else %}
+        <p>essa pagina é dos cachorros da estação hack</p>
+    {% endif %}
+    <ul>
+
+    {% for dog in cachorros %}
+        <li>{{dog}}</li>
+    {% endfor %}
+
+    </ul>
+    <h1>pagina dos cachorrões</h1>
+    <h2>estamos na pasta lion do projeto thundercats</h2>
+</body>
+</html>
